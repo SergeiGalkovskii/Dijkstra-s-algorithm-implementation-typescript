@@ -18,5 +18,5 @@ dijkstra.addVertex(new Vertex("E", [{ nameOfVertex: "A", weight: 7 }, { nameOfVe
 dijkstra.addVertex(new Vertex("F", [{ nameOfVertex: "D", weight: 2 }, { nameOfVertex: "G", weight: 3 }], 1));
 dijkstra.addVertex(new Vertex("G", [{ nameOfVertex: "D", weight: 10 }, { nameOfVertex: "E", weight: 5 }, { nameOfVertex: "F", weight: 3 }], 1));
 //get array of result
-console.log(dijkstra.findWeightOfShortestWay("A", "F"));    //[ "A", "B", "D", "F", "11" ];
+console.log(dijkstra.findShortestWay("A", "F"));    //[ "A", "B", "D", "F", "11" ];
 ```
