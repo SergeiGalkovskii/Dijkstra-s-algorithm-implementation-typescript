@@ -26,7 +26,7 @@ class Dijkstra {
         this.vertices[vertex.name] = vertex;
     }
 
-    findpointsOfShortestWay(start: string, finish: string, weight: number): string[] {
+    findPointsOfShortestWay(start: string, finish: string, weight: number): string[] {
 
         let nextVertex: string = finish;
         let arrayWithVertex: string[] = [];
@@ -47,7 +47,7 @@ class Dijkstra {
     }
 
 
-    findWeightOfShortestWay(start: string, finish: string): string[] {
+    findShortestWay(start: string, finish: string): string[] {
 
         let nodes: any = {};
         let visitedVertex: string[] = [];
@@ -74,7 +74,7 @@ class Dijkstra {
             delete nodes[sortedVisitedByWeight[0]];
         }
         const finishWeight: number = this.vertices[finish].weight;
-        let arrayWithVertex: string[] = this.findpointsOfShortestWay(start, finish, finishWeight).reverse();
+        let arrayWithVertex: string[] = this.findPointsOfShortestWay(start, finish, finishWeight).reverse();
         arrayWithVertex.push(finish, finishWeight.toString());
         return arrayWithVertex;
     }
@@ -89,4 +89,4 @@ dijkstra.addVertex(new Vertex("D", [{ nameOfVertex: "B", weight: 5 }, { nameOfVe
 dijkstra.addVertex(new Vertex("E", [{ nameOfVertex: "A", weight: 7 }, { nameOfVertex: "C", weight: 8 }, { nameOfVertex: "D", weight: 2 }, { nameOfVertex: "G", weight: 5 }], 1));
 dijkstra.addVertex(new Vertex("F", [{ nameOfVertex: "D", weight: 2 }, { nameOfVertex: "G", weight: 3 }], 1));
 dijkstra.addVertex(new Vertex("G", [{ nameOfVertex: "D", weight: 10 }, { nameOfVertex: "E", weight: 5 }, { nameOfVertex: "F", weight: 3 }], 1));
-console.log(dijkstra.findWeightOfShortestWay("A", "F"));
+console.log(dijkstra.findShortestWay("A", "F"));
